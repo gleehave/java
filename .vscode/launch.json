@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch HashSetDemo",
+            "request": "launch",
+            "mainClass": "collections.HashSetDemo",
+            "projectName": "practice_java_6b81e31f"
+        },
+        {
+            "type": "java",
+            "name": "Launch DefaultDemo",
+            "request": "launch",
+            "mainClass": "DefaultDemo",
+            "projectName": "practice_java_6b81e31f"
+        },
+        {
+            "type": "java",
+            "name": "Launch TryPrivateDemo",
+            "request": "launch",
+            "mainClass": "TryPrivateDemo",
+            "projectName": "practice_java_6b81e31f"
+        },
+        {
+            "type": "java",
             "name": "Launch Student",
             "request": "launch",
             "mainClass": "Student",

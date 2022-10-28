@@ -1,3 +1,4 @@
+package basic;
 public class IntTypeDemo {
     public static void main(String[] args){
         int hexNumber = 0x10;  // 16진수로 표현하려면 0x를 붙인다.

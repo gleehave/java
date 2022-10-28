@@ -1,3 +1,4 @@
+package basic;
 public class MyClass {
     //생성자를 만든다.
     // 1. 생성자는 반환값이 없는 메소드이다.
@@ -18,10 +19,10 @@ public class MyClass {
     }
 
     public static void main(String[] args){
-        MyClass obj1 = new MyClass();
+        // MyClass obj1 = new MyClass();
 
-        MyClass obj2 = new MyClass(1);
+        // MyClass obj2 = new MyClass(1);
 
-        MyClass obj3 = new MyClass("exam");
+        // MyClass obj3 = new MyClass("exam");
     }
 }

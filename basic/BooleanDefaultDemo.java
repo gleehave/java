@@ -1,3 +1,4 @@
+package basic;
 public class BooleanDefaultDemo {
     static boolean flag;
     public static void main(String[] args){

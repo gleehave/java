@@ -1,3 +1,4 @@
+package basic;
 public class CharDemo {
     public static void main(String[] args){
         char c1 = '가';

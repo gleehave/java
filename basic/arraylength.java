@@ -1,3 +1,4 @@
+package basic;
 public class arraylength {
     public static void main(String[] args){
         int[][] scores = new int[3][5];

@@ -1,3 +1,4 @@
+package basic;
 public class Student extends Human {
     @Override
     void play(){
