@@ -304,3 +304,168 @@ thread.start();
   - 데이터 담기: add(), addAll() 
   - 데이터 확인: contains(), containsAll(), isEmpty(), equals(), size()
   - 데이터 삭제: clear(), remove(), removeAll()
+
+## Java Program
+```
+import java.util.Arrays;
+
+public class BinarySearch { //반드시 BinarySearch.java 파일에 있어야 한다.
+  public static int rank(int key, int[] a){
+    int hi = a.length - 1;
+    while (lo <= hi){
+      int mid = lo + (hi - lo) / 2;
+      if (key < a[mid]) hi = mid - 1;
+      else if (key > a[mid]) lo = mid + 1;
+      else return mid;
+    }
+    return -1;
+  }
+                     // 시스템 호출 main()
+  public static void main(String[] args) {
+    In in = new In(args[0]);
+    int[] whitelist = in.readAllInts();
+    
+    Arrays.sort(whitelist);
+    
+    while(!StdIn.isEmpty()){
+      int key = StdIn.readInt();
+      if (rank(key, whitelist) == -1)
+      StdOut.println(key);
+    }
+  }
+}
+                    //args[0]
+% java BinarySearch largeW.txt < largeT.txt
+499569
+984875
+...
+```
+
+## Typical Array Code
+- 배열 항목 중 가장 큰 값 찾기
+```
+double max = a[0];
+for (int i=1; i < a.length; i++) {
+  if (a[i] > max) {
+    max = a[i];
+  }
+}
+```
+- 배열 항목들의 평균값 계산
+```
+int N = a.length;
+double sum = 0.0;
+for (int i=0; i < N; i++) {
+  sum += a[i];
+}
+double average = sum / N;
+```
+- 배열을 또 다른 배열로 복제
+```
+int N = a.length;
+double[] b = new double[N];
+for (int i=0; i<N; i++){
+  b[i] = a[i];
+}
+```
+- 배열 항목들의 순서를 거꾸로 재배치
+```
+int N = a.length;
+for (int i = 0; i < N/2; i++){
+  double temp = a[i];
+  a[i] = a[N-i-1];
+  a[N-i-1] = temp;
+}
+```
+- 행렬과 행렬의 곱
+```
+int N = a.length;
+double[][] c = new double[N][N];
+for (int i=0; i < N; i++){
+  for (int j=0; j < N; j++){
+    for (int k=0; k < N; k++){
+      c[i][j] += a[i][k] * b[k][j];
+    }
+  }
+}
+
+```
+
+## StdIn
+```
+boolean isEmpty()     : 읽어 들일 값이 없으면 True/ 있으면 False 
+int     readInt()
+double  readDouble()
+float   readFloat()
+long    readLong()
+boolean readBoolean()
+char    readChar()
+byte    readByte()
+String  readString()
+boolean hasNextLine()  : 입력 스트림에 읽어 들여야 할 문자열 라인이 남아 있는가?
+String  readLine()     : 문자열 한 라인 읽어 들이기
+String  readAll()      : 입력 스트림에 남아있는 모든 것을 읽어 들이기
+```
+
+## In
+- 입력값들을 배열로써 읽어 들이기 위함.
+```
+int[]     : readAllInts()
+double[]  : readAllDoubles()
+float[]   : readAllFloats()
+long[]    : readAllLongs()
+boolean[] : readBooleans()
+char[]    : readAllChars()
+byte[]    : readAllBytes()
+String[]  : readAllStrings()
+String[]  : readAllLines()
+```
+
+## Bag, Queue, Stack
+- 기초적인 제네릭/반복자 지원 컬렉션 데이터 타입들의 API
+```
+public class Bag<Item> implements Iterable<Item>
+void add(Item item)
+boolean isEmpty()
+int size()
+
+public class Queue<Item> implements Iterable<Item>
+void enqueue(Item item)
+Item dequeue()    : 최근에 추가된 항목 제거
+boolean isEmpty()
+int size()
+
+public class Stack<Item> implements Iterable<Item>
+void push(Item item)
+Item pop()
+boolean isEmpty()
+int size()
+```
+```
+public static int[] readAllInts(String name){
+  In in = new In(name);
+  Queue<Integer> q = new Queue<Integer>();
+  
+  while (!in.isEmpty())
+    q.enqueue(in.readInt());
+  
+  int N = q.size();
+  int[] a = new int[N];
+  
+  for (int i=0; i<N; i++)
+    a[i] = q.dequeue();
+  return a;
+}
+```
+```
+public class Reverse{
+  public static void main(String[] args){
+    Stack<Integer> stack = new Stack<Integer>();
+    while (!StdIn.isEmpty())
+      stack.push(StdIn.readInt());
+    
+    for (int i : stack)
+      StdOut.println(i);    
+  }
+}
+```
