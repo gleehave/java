@@ -469,3 +469,240 @@ public class Reverse{
   }
 }
 ```
+
+## Java 문법에서 헷갈리는 것들.
+```
+public class Main{
+  public static void main(String[] args){
+    String str = "100";
+    int i = Integer.parseInt(str); // 문자열 "100"을 integer로 변환한다.
+    long l = Long.parseLong(str); // 문자열 "100"을 long으로 변환한다.
+    
+    String str2 = String.valueOf(i);
+  }
+}
+```
+```
+import java.util.Random;
+
+public class Main{
+  public static void main(String[] args){
+    Random random = new Random();
+    int rand = random.nextInt(10); // 0~9까지 랜덤하게 반환
+    
+    // 5~9까지 반환하고 싶다면?
+    int rand = random.nextInt(4) + 5;
+ 
+    System.out.println(rand);
+  }
+}
+```
+```
+public class Main{
+  public static void main(String[] args){
+    Scanner scanner = new Scanner(System.in);
+    String str = scanner.next();
+    int i = scanner.nextInt();
+    long l = scanner.nextLong();
+    
+    System.out.println(scanner.next());
+  }
+}
+```
+
+```
+public class Main{
+  public static void main(String[] args){
+    for (int i=0; i<10; i++) {
+      System.out.println(i);
+      if (i==6){ break; }
+      else { continue; }
+    }
+    
+    int i=0;
+    while (i<10){
+      System.out.println(i);
+      i++;
+    }
+  }
+}
+```
+```
+public class Main{
+  public static void main(String[] args){
+    int[] score = new int[5];
+    int[] score = new int[] {1,2,3,4,5};
+    int[] score = {1,2,3,4,5};
+   
+    int count = score.length; // 5출력
+    System.out.println(count);
+    
+    score[0] = 10;
+    System.out.println(score[0]); // 10출력
+    
+    String[] names = new String[2]; // 초기화 하지 않으면 null
+    System.out.println(names[0].length()); // NullPointerException 발생
+  }
+}
+```
+
+```
+public class Main{
+  public static void main(String[] args){
+    ArrayList<Integer> scoreList = new ArrayList<>();
+    scoreList.add(10);
+    scoreList.add(20);
+    scoreList.add(2, 30); // add(index, element)
+    scoreList.remove(2);  // remove(index)
+  }
+}
+```
+
+```
+public class Main{
+  public static void main(String[] args){
+    add(50, 10);
+    add(30, 10);
+    add(10,20,30);
+    add(1,2,3,4,4,5,6,7,8,9,10);
+  }
+  
+  public static int add(int x, int y){
+    return x + y;
+  }
+  
+  public static int add(int x, int y, int z) {
+    return x+y+z;
+  }
+  
+  public static int add(int ... numbers){ // 배열처럼 사용 가능
+    int sum = 0;
+    for (int i=0; i<numbers.length; i++){
+      sum += i;
+    }
+  } 
+}
+```
+```
+class Person{
+  private String name;
+  private int age;
+  
+  Person(String name, int age){ // 클래스 이름과 같으면 생성자이다. 즉, 객체가 만들어질 때 초기화 된다.
+    this.name = name;
+  }  
+  
+  //Getter and Setter
+  ........
+  
+  @Override
+  public String toString(){
+    return "Person{" +
+            "name=" + name + '\'' + 
+            ", age=" + age +
+            '}';
+  } 
+}
+```
+```
+package models; // models라는 package 폴더를 만든다.
+
+public class Hero extends Person{
+  
+  public Hero(String name){
+    super(name, 0);
+  }
+  
+  private boolean isFlying;
+  
+  public boolean isFlying(){
+    return isFlying;
+  }
+  
+  public void setFlying(boolean flying) {
+    isFlying = flying;
+  }
+  
+  public void attack(Hero hero){
+    // getName은 Person에서 정의한 메소드이다.
+    System.out.println(this.getName() + hero.getName());
+  }
+}
+```
+```
+package models;
+
+public abstract class Character extends Person{
+  public abstract void attack(Hero hero);
+}
+
+interface ICharacter{
+  void attack(Hero hero);
+}
+
+public class Magician extends Character{
+  @Override
+  public void attack(Hero hero){
+    //logic
+  }
+
+public class Magician implements ICharacter{
+  @Override
+  public void attack(Hero hero){
+    //logic
+  }
+}
+
+public static void main(~~){
+  // Magician 클래스에서 다중으로 상속받았을 경우, 아래와 같이 선언 가능
+  Magician magician = new Magician();
+  Character magician2 = new Magician();
+  ICharacter magician3 = new Magician();
+  
+  ArrayList<Character> characterArrayList = new ArrayList<>();
+  characterArrayList.add(magician);
+  characterArrayList.add(magician2);
+  characterArrayList.add(magician3); // 인터페이스는 담을 수 없음.
+ 
+  if (magician2 instanceof Magician){ // Magician인지 아닌지 체크 한다.
+    //logic
+  }
+}
+```
+
+```
+public class Main{
+  public static void main(String[] args) {
+    print("hello");
+    print(1);
+    print(3L);
+    print(true):
+  }
+  
+  // 제네릭 타입으로 하면 어떤 타입이든 받을 수 있다.
+  public static <T> void print(T type){
+    System.out.println(type);
+  }
+}
+```
+```
+public class Main{
+  public static void main(String[] args) {
+    System.out.println("1");
+    new Thread(new Runnable(){
+      @Override
+      public void run(){
+        for(int i=0; i<5; i++){
+          try{
+            Thread.sleep(100);
+            System.out.println(Thread.currentThread().getName()+":"+i);
+          } catch (InterruptedException e){
+            e.printStackTrace();
+          }
+        }
+      }
+    }).start();
+  }
+}
+```
+
