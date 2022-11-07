@@ -705,4 +705,31 @@ public class Main{
   }
 }
 ```
-
+## Annotation
+- 일종의 메타 정보이며, 프로그램이 사용하는 주석이다.
+- 가장 쉽게 접한 Annotation은 @Override이다.
+- Annotation은 프레임워크에서 특정 Annotation을 확인하면 특정 기능이 실행되거나, 특정 코드가 자동으로 생성되도록 하는 데 사용할 수 있다.
+- JDK에서 제공하는 표준 Annotation
+  - @Override: 컴파일에게 재정의하는 메소드임을 알려준다.
+  - @Deprecated: 지금까지는 사용했지만 앞으로는 사용하지 않을 대상에게 붙인다. 
+  - @SuppressWarnings: 컴파일러의 특정 경고 메세지가 나타나지 않도록 한다.
+  - @SafeVarage: 제네릭타입의 가변인자에 사용한다.
+  - @FunctionalInterface: 함수영 인터페이스이다.
+  - @Native: native메소드에서 참조되는 상수에 붙인다.
+- Custom Annotation
+  - Custom Annotation을 작성하려면 JDK에서 제공하는 Meta Annotation을 사용해야 한다.
+    - @Target: Annotation이 적용 가능한 대상을 지정하는데 사용한다.
+      - CONSTRUCTOR
+      - FIELD
+      - LOCAL_VARIABLE
+      - METHOD
+      - PACKAGE
+      - PARAMETER
+      - TYPE
+    - @Documented: Annotation 정보가 javadoc로 작성된 문서에 포함하도록 한다.
+    - @Inherited: Annotation이 자식 클래스에 상속되도록 한다.
+    - @Retention: Annotation이 유지되는 범위를 지정한다.
+      - SOURCE: source만 있고, 컴파일 시작되면 사라짐
+      - CLASS: 컴파일은 가능하지만 런타임은 불가능
+      - RUNTIME: 런타임때도 참조 가능
+    - @Repeatable: Annotation을 반복해서 적용할 수 있다.
