@@ -733,3 +733,223 @@ public class Main{
       - CLASS: 컴파일은 가능하지만 런타임은 불가능
       - RUNTIME: 런타임때도 참조 가능
     - @Repeatable: Annotation을 반복해서 적용할 수 있다.
+
+## Collection
+- JAVA에서 데이터 집합을 정의한 클래스 인터페이스를 제공한다.
+
+Set : 순서를 유지하지 않는 데이터의 집합으로 데이터의 중복을 허용하지 않는다.
+  - HashSet
+  - TreeSet
+
+List: 순서가 있는 데이터의 집합으로 데이터의 중복을 허용한다.
+  - LinkedList
+  - Vector
+  - ArrayList
+
+Queue: List와 유사함
+  - LinkedList
+  - PriorityQueue
+
+Map: 키(Key), 값(Value)의 쌍으로 이루어진 데이터의 집합으로, 순서는 유지되지 않으며 키(Key)의 중복을 허용하지 않으나 값(Value)의 중복은 허용한다.
+  - Hashtable
+  - HashMap
+  - TreeMap
+
+### ArrayList
+```
+import java.io.*;
+import java.util.*;
+
+class GCG{
+  public static void main(String[] args){
+    ArrayList<Integer> a = new ArrayList<Integer>();
+
+    for (int i=1; i<=5; i++){
+      a.add(i)
+    }
+
+    System.out.println("original: "+a);
+    a.remove(3);
+    System.out.println("remove: "+a);
+    
+    for (int i=0; i< a.size(); i++){
+      System.out.print(a.get(i) + " ");
+    }
+  }
+}
+
+original: [1,2,3,4,5]
+remove: [1,2,3,5]
+1 2 3 5
+```
+### LinkedList
+- 요소가 연속된 위치(메모리 위치가 다름)에 저장되지 않고, 모든 요소가 데이터 부분과 주소부분이 있는 별도의 객체에 저장된다.
+```
+import java.io.*;
+import java.util.*;
+
+class GCG{
+  public static void main(String[] args){
+    LinkedList<Integer> arr_linked = new LinkedList<Integer>();
+    for(inti=1; i<=5; i++){
+      arr_linked.add(i);
+    }
+
+    System.out.println(arr_linked);
+    arr_linked.remove(3);
+    System.out.println(arr_linked)
+
+    for(int i=0; i<arr_linked.size(); i++){
+      System.out.println(arr_linked.get(i)+" ");
+    }
+
+  }
+}
+
+[1, 2, 3, 4, 5]
+[1, 2, 3, 5]
+1 2 3 5
+```
+### Vector
+- ArrayList와 유사하지만, Vector는 동기화가 된다는 특징이 있다.
+```
+import java.io.*;
+import java.util.*;
+
+class GFG{
+  public static void main(String[] args){
+    Vector<Integer> vec = new Vector<Integer>();
+
+    for(int i=1; i<=5; i++){
+      vec. add(i);
+    }
+
+    System.out.println(vec);
+    vec.remove(3);
+    System.out.println(vec);
+
+    for (int i=0; i<vec.size(); i++){
+      System.out.print(vec.get(i) + " ");
+    }
+  }
+}
+
+[1, 2, 3, 4, 5]
+[1, 2, 3, 5]
+1 2 3 5
+```
+### Stack
+```
+import java.util.*;
+public class GCG{
+  public static void main(String[] args){
+    Stack<String> stack = new Stack<String>();
+    stack.push("Hello");
+    stack.push("World");
+    stack.push("Hello");
+    stack.push("Hello");
+
+    Iterator<String> iter = stack.iterator();
+
+    while (iter.hasNext()){
+      System.out.print(iter.next() + " ");
+    }
+
+    System.out.println();
+    stack.pop(); // 맨 뒤의 값이 삭제됨.
+
+    iter = stack.iterator();
+
+    while (iter.hasNext()){
+      System.out.print(iter.next() + " ");
+    }
+  }
+}
+
+Hello World! Hello Hello
+Hello World! Hello
+```
+### ArrayDeque
+```
+import java.util.*;
+public class ArrayDequeDemo{
+  public static void main(String[] args){
+    ArrayDeque<Integer> de_que = new ArrayDeque<Integer>(10);
+
+    de_que.add(10);
+    de_que.add(20);
+    de_que.add(30);
+    de_que.add(40);
+    de_que.add(50);
+
+    System.out.println(de_que);
+    de_que.clear();
+
+    de_que.addFirst(564);
+    de_que.addFirst(291);
+    de_que.addLast(24);
+    de_que.addLast(14);
+
+    System.out.println(de_que);
+  }
+}
+
+[10, 20, 30, 40, 50] 
+[291, 564, 24, 14]
+```
+### HashSet
+- HashSet에 입력되는 데이터는 동일한 순서로 삽입되는 것을 보장하지 않습니다.
+- 중복된 값을 허용하지 않습니다.
+- Null을 허용합니다.
+```
+import java.util.*;
+
+public class HashSetDemo{
+  public static void main(String[] args){
+    HashSet<String> hs = new HashSet<String>();
+
+    hs.add("Hello");
+    hs.add("World);
+    hs.add("Hello");
+    hs.add("Blog");
+    hs.add("CrazyKim");
+
+    Itertor<String> iter = hs.iterator();
+    while (iter.hasNext()){
+      System.out.println(iter.next());
+    }
+  }
+}
+
+Hello
+CrazyKim
+World
+Blog
+```
+### Map
+- Map은 데이터를 Key-Value로 매핑하는 데이터 구조이다.
+- 중복된 키는 허용하지 않고, 중복된 값은 허용한다.
+```
+import java.util.*;
+
+public class HashMapDemo{
+  public statkc void main(String[] args){
+    HashMap<Integer, String> hashmap = new HashMap<Integer, String>();
+
+    hashmap.put(1, "hello");
+    hashmap.put(2, "world);
+    hashmap.put(3, "crazy");
+
+    System.out.println("Value of 1 is "_hashmap.get(1));
+
+    for (Map.Entry<Integer, String> e : hashmap.entrySet()){
+      System.out.println(e.getKey() + " " + e.getValue());
+    }
+  }
+}
+
+Value for 1 is Hello
+1 Hello
+2 World
+3 CrazyKim
+```
