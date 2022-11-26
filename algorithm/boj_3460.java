@@ -33,7 +33,10 @@ public class boj_3460 {
         }
         
         for (String tmp: binary){
+            System.out.println("tmp인데?  "+tmp);
             for (int i=0; i< tmp.length(); i++){
+                System.out.println("tmp.charAt(i)   "+tmp.charAt(i));
+                System.out.println("i: "+i);
                 if (tmp.charAt(i)=='1'){
                     System.out.println(i+" ");
                 }
@@ -41,3 +44,9 @@ public class boj_3460 {
         }
     }
 }
+
+/*
+ * charAt()
+ * String으로 저장된 문자열 중에서 한 글자만 선택해서 char타입으로 변환해 주는 함수이다.
+ * 이때, charAt(숫자) 가 들어가는데, 숫자는 문자열의 인덱스를 의미한다.
+ */
