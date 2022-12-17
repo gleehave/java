@@ -14,7 +14,7 @@ public class boj_3460 {
         for (int i = 0; i < N; i++) {
             int target = sc.nextInt();
             String binary = Integer.toBinaryString(target);
-
+            System.out.println(binary);
             for (int j = binary.length() - 1; j >= 0; j--) {
                 if (binary.charAt(j) == '1') {
                     System.out.print(binary.length()-j-1+" ");
