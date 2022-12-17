@@ -9,6 +9,24 @@ import java.util.Scanner;
 public class boj_3460 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+
+        for (int i = 0; i < N; i++) {
+            int target = sc.nextInt();
+            String binary = Integer.toBinaryString(target);
+
+            for (int j = binary.length() - 1; j >= 0; j--) {
+                if (binary.charAt(j) == '1') {
+                    System.out.print(binary.length()-j-1+" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    /*
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
         String[] binary = new String[n];
@@ -42,6 +60,8 @@ public class boj_3460 {
             }
         }
     }
+
+     */
 }
 
 /*
