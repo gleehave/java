@@ -2,19 +2,21 @@
 <details>
 <summary> 기초 증명 및 java 활용</summary>
 <div markdown="1">
-  <img src="../KakaoTalk_Photo_2023-01-04-21-41-58 013.jpeg">
-  <img src="../KakaoTalk_Photo_2023-01-04-21-41-58 012.jpeg">
-  <img src="../KakaoTalk_Photo_2023-01-04-21-41-58 011.jpeg">
-  <img src="../KakaoTalk_Photo_2023-01-04-21-41-58 010.jpeg">
-  <img src="../KakaoTalk_Photo_2023-01-04-21-41-58 009.jpeg">
-  <img src="../KakaoTalk_Photo_2023-01-04-21-41-58 008.jpeg">
-  <img src="../KakaoTalk_Photo_2023-01-04-21-41-58 007.jpeg">
-  <img src="../KakaoTalk_Photo_2023-01-04-21-41-58 006.jpeg">
-  <img src="../KakaoTalk_Photo_2023-01-04-21-41-58 005.jpeg">
-  <img src="../KakaoTalk_Photo_2023-01-04-21-41-57 004.jpeg">
-  <img src="../KakaoTalk_Photo_2023-01-04-21-41-57 003.jpeg">
-  <img src="../KakaoTalk_Photo_2023-01-04-21-41-57 002.jpeg">
-  <img src="../KakaoTalk_Photo_2023-01-04-21-41-57 001.jpeg">
+
+![KakaoTalk_Photo_2023-01-04-21-41-58 013](https://user-images.githubusercontent.com/91510831/210559340-9ae73817-a607-4526-9c1f-5abc05bf134d.jpeg)
+![KakaoTalk_Photo_2023-01-04-21-41-58 012](https://user-images.githubusercontent.com/91510831/210559356-f45c21ed-586f-4a7e-a8e7-3b9f0aa1b994.jpeg)
+![KakaoTalk_Photo_2023-01-04-21-41-58 011](https://user-images.githubusercontent.com/91510831/210559432-caa9c29a-baae-4284-914d-29d9b35385a1.jpeg)
+![KakaoTalk_Photo_2023-01-04-21-41-58 010](https://user-images.githubusercontent.com/91510831/210559450-38309b12-e0c6-4f35-a97c-bac49eb0ddca.jpeg)
+![KakaoTalk_Photo_2023-01-04-21-41-58 009](https://user-images.githubusercontent.com/91510831/210559471-f8dc57a1-4900-4430-aa21-482ab7f8136b.jpeg)
+![KakaoTalk_Photo_2023-01-04-21-41-58 008](https://user-images.githubusercontent.com/91510831/210559483-5a31035d-ddd8-47f2-a8ff-aee9dbab82f1.jpeg)
+![KakaoTalk_Photo_2023-01-04-21-41-58 007](https://user-images.githubusercontent.com/91510831/210559493-885e1a2a-6c73-4d31-936d-b08fee1f513e.jpeg)
+![KakaoTalk_Photo_2023-01-04-21-41-58 006](https://user-images.githubusercontent.com/91510831/210559516-e9741064-04d6-4292-983a-66e36d2317d0.jpeg)
+![KakaoTalk_Photo_2023-01-04-21-41-58 005](https://user-images.githubusercontent.com/91510831/210559531-7cb3c77b-b81d-46ea-bb1f-c4a15ae08b60.jpeg)
+![KakaoTalk_Photo_2023-01-04-21-41-57 004](https://user-images.githubusercontent.com/91510831/210559552-fc7b30ec-6842-4cbe-ba38-5d4996191a41.jpeg)
+![KakaoTalk_Photo_2023-01-04-21-41-57 003](https://user-images.githubusercontent.com/91510831/210559566-19a94af7-0369-4897-a325-52be9b030c17.jpeg)
+![KakaoTalk_Photo_2023-01-04-21-41-57 002](https://user-images.githubusercontent.com/91510831/210559584-7095a20c-502f-4099-a4cd-57bb3ad1e670.jpeg)
+![KakaoTalk_Photo_2023-01-04-21-41-57 001](https://user-images.githubusercontent.com/91510831/210559600-5d318201-4cc8-4b81-8403-3b653e929226.jpeg)
+
 </div>
 </details>
 
