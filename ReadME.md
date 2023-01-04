@@ -1,3 +1,23 @@
+## SWEA
+<details>
+<summary> 기초 증명 및 java 활용</summary>
+<div markdown="1">
+<img src="../KakaoTalk_Photo_2023-01-04-21-41-58 013.jpeg">
+<img src="../KakaoTalk_Photo_2023-01-04-21-41-58 012.jpeg">
+<img src="../KakaoTalk_Photo_2023-01-04-21-41-58 011.jpeg">
+<img src="../KakaoTalk_Photo_2023-01-04-21-41-58 010.jpeg">
+<img src="../KakaoTalk_Photo_2023-01-04-21-41-58 009.jpeg">
+<img src="../KakaoTalk_Photo_2023-01-04-21-41-58 008.jpeg">
+<img src="../KakaoTalk_Photo_2023-01-04-21-41-58 007.jpeg">
+<img src="../KakaoTalk_Photo_2023-01-04-21-41-58 006.jpeg">
+<img src="../KakaoTalk_Photo_2023-01-04-21-41-58 005.jpeg">
+<img src="../KakaoTalk_Photo_2023-01-04-21-41-57 004.jpeg">
+<img src="../KakaoTalk_Photo_2023-01-04-21-41-57 003.jpeg">
+<img src="../KakaoTalk_Photo_2023-01-04-21-41-57 002.jpeg">
+<img src="../KakaoTalk_Photo_2023-01-04-21-41-57 001.jpeg">
+
+</details>
+
 ## Class
 ```
 public class Common{
