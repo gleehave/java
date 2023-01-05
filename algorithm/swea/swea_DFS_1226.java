@@ -1,13 +1,11 @@
 package algorithm.swea;
 
-import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.Stack;
 
 // 1은 벽, 0은 길
 // 2는 출발점, 3은 도착점
 
-public class swea_1226 {
+public class swea_DFS_1226 {
 
     static int[][] map;
     static int[][] visited;
