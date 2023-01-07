@@ -6,55 +6,52 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class swea_3234 {
-    static int N, res;
-    static int[] weight, sorted;
-    static boolean[] isSelected;
+    static int T, N, res, arr[], weight[];
+    static boolean used[];
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder sb = new StringBuilder();
-        int tc = Integer.parseInt(br.readLine());
+        StringTokenizer st;
 
-        for (int T = 1; T <= tc; T++) {
-            N = Integer.parseInt(br.readLine());
-            weight = new int[N];
-            sorted = new int[N];
-            isSelected = new boolean[N];
-
-            StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-            for (int i = 0; i < N; i++) {
-                weight[i] = Integer.parseInt(st.nextToken());
-            }
-
+        T = Integer.parseInt(br.readLine());
+        for (int tc = 1; tc <= T; tc++) {
             res = 0;
-            permutation(0);
-            sb.append("#").append(" ").append(res).append("\n");
-        }
-        System.out.println(sb.toString());
-        br.close();
-    }
+            N = Integer.parseInt(br.readLine());
+            arr = new int[N];
+            weight = new int[N];
 
-    static void permutation(int cnt) {
-        if (cnt == N) {
-            scale(0, 0, 0);
+            st = new StringTokenizer(br.readLine());
+            for (int i = 0; i < N; i++) {
+                arr[i] = Integer.parseInt(st.nextToken());
+            }
+            used = new boolean[N];
+            balances(0);
+            System.out.println("#" + tc + " " + res);
         }
+    }
+    public static void balances(int cnt){
+        if (cnt == N) {
+            check(0, 0, 0);
+            return;
+        }
+
         for (int i = 0; i < N; i++) {
-            if(isSelected[i]) continue;
-            sorted[cnt] = weight[i];
-
-            isSelected[i] = true;
-            permutation(cnt + 1);
-            isSelected[i] = false;
+            if(used[i]) continue;
+            used[i] = true;
+            weight[cnt] = arr[i];
+            balances(cnt + 1);
+            used[i] = false;
         }
     }
 
-    static void scale(int cnt, int left, int right) {
-        if(left < right) return;
-        if (cnt == N) {
+    public static void check(int idx, int sumL, int sumR) {
+        if (idx == N) {
             res++;
             return;
         }
-        scale(cnt + 1, left, right + sorted[cnt]);
-        scale(cnt + 1, left + sorted[cnt], right);
+        check(idx + 1, sumL + weight[idx], sumR);
+        if (sumR + weight[idx] <= sumL) {
+            check(idx + 1, sumL, sumR + weight[idx]);
+        }
     }
 }
