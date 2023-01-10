@@ -20,6 +20,41 @@
 </div>
 </details>
 
+## Java 입력
+```
+Scanner scan = new Scanner(System.in);
+```
+- System.in은 무엇인가?
+
+```
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+```
+- InputStreamReader는 또 무엇인가?
+
+스트림(Stream)을 이해해야 위의 질문을 해결할 수 있다.
+- 스트림은 데이터 흐름이다. 또한, 단방향이므로 입력과 출력이 동시에 발생할 수 없다.
+- 그러므로 용도에 따라 입력 스트림, 출력 스트림이 나뉜다.
+- 자바에서는 가장 기본이 되는 입력 스트림은 InputStream(출력 스트림은 OutputStream)이다.
+
+System.in 과 InputStream은 무슨 관계인가?
+- System.in은 InputStream 타입의 필드이다.
+  - 더 정확히는 System클래스의 in이라는 필드는 InputStream의 정적 필드이다.
+
+그렇다면..? Scanner(System.in)은 입력 바이트 스트림인 InputStream을 통해 표준 입력을 받으려고 하는 것이다.
+- InputStream은 우리가 InputStream.read()를 통해 입력받으려고 해도 1Byte만 인식하므로, 한글을 입력해도 읽지 못하고 엉뚱한 문자를 출력한다.
+  - 이를 해결하기 위해, '문자를 온전하게 읽어들이기' 가 필요하고, 이때 InputStreamReader가 사용된다.
+
+BufferedReader와 InputStreamReader(System.in)
+```
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+// 2개의 입력 코드는 같다.
+InputStream inputstream = System.in;
+InputStreamReader sr = new InputStreamReader(inputstream);
+BufferedReader br = new BufferedReader(sr);
+```
+1. 기본적으로 바이트 스트림인 InputStream을 통해서 바이트 단위로 데이터를 입력받는다.
+2. 입력 데이터를 char형태로 처리하기 위해 중개자 역할인 문자스트림 InputStreamReader로 감싸준다.
+
 ## Class
 ```
 public class Common{
