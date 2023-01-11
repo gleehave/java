@@ -57,6 +57,44 @@ BufferedReader br = new BufferedReader(sr);
 
 ![스크린샷 2023-01-10 오후 8 50 42](https://user-images.githubusercontent.com/91510831/211544629-4931ed48-29cd-45e2-b0f7-26fede884443.png)
 
+## StrinbBuilder
+- 자바에서 문자열을 다룰 때, 문자열 1개 이상 있어 각 문자열을 더해야 한다고 하면 어떻게 해야할까?
+- 자바에서 String 객체는 변경 불가능하므로, 한번 생성하면 바꿀 수 없다.
+  - 그렇기에 하나의 문자열을 다른 문자열과 연결하면 새 문자열이 생성되고, 이전 문자열은 GC로 포함된다.
+- 이때, StringBuilder는 변경 가능한 문자열을 만들어 주므로 String을 합치는 작업 시, 하나의 대안이 된다.
+
+```
+public class Main
+{
+    public static void main(String[] args)
+    {
+        String result2 = "프로그래밍 - ";
+        String java = "자바";
+        String android = "안드로이드";
+        
+        String result = java + android;
+        result2 += java += android;
+        
+        System.out.println(result);
+        System.out.println(result2);
+    }
+}
+```
+```
+public class Main{
+  public static void main(String[] args){
+    StringBuilder stringBuilder = new StringBuilder();
+    stringBuilder.append("문자열 ").append("연결"); 
+    
+    // String에 StringBuilder를 그대로 넣을 순 없다. toString()을 붙여야 한다.
+    String str = stringBuilder.toString();
+    
+    System.out.println(stringBuilder);
+    System.out.println(str);
+  }
+}
+```
+
 ## Class
 ```
 public class Common{
